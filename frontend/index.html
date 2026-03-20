@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BudgetMart</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>🛒 BudgetMart</h1>
+    <p class="header-small">Smart Grocery Recommendation System</p>
+    <p class="header-small"><b>Fresh Choices. Smart Budget. Better Life.</b></p>
+
+    <h2>User Name</h2>
+    <input type="text" id="user_name" placeholder="Enter Your Name">
+
+    <h2>Set Monthly Budget</h2>
+    <input type="number" id="budget" placeholder="Enter Budget">
+    <button onclick="setBudget()">Save Budget</button>
+
+    <h2>All Grocery Items</h2>
+    <button onclick="loadItems()">Load Items</button>
+    <div id="itemList"></div>
+
+    <br>
+    <a href="add.html">➕ Add Item</a> |
+    <a href="recommendation.html">🤖 Get Recommendation</a>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

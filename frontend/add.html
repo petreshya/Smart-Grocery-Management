@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Item - BudgetMart</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+<h1>🛒 BudgetMart</h1>
+<p class="header-small">Smart Grocery Recommendation System</p>
+<p class="header-small"><b>Fresh Choices. Smart Budget. Better Life.</b></p>
+
+<input id="user_name" placeholder="Enter Your Name">
+<input id="name" placeholder="Item Name">
+<input id="category" placeholder="Category">
+<input id="price" type="number" placeholder="Price">
+
+<select id="priority">
+    <option value="essential">Essential</option>
+    <option value="non-essential">Non-Essential</option>
+    <option value="both">Both</option>
+</select>
+
+<label>Purchase Frequency</label>
+<select id="purchase_frequency" required>
+    <option value="Daily">Daily</option>
+    <option value="Weekly">Weekly</option>
+    <option value="Monthly">Monthly</option>
+</select>
+
+<button onclick="addItem()">Add Item</button>
+
+<br>
+<a href="index.html">Back</a>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
