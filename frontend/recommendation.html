@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,22 +7,28 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="container">
-<h1>🛒 BudgetMart</h1>
-<p class="header-small">Smart Grocery Recommendation System</p>
-<p class="header-small"><b>Fresh Choices. Smart Budget. Better Life.</b></p>
+    <div class="container">
+        <header>
+            <h1>🛒 BudgetMart</h1>
+            <p class="header-small">Smart Grocery Recommendation System</p>
+        </header>
 
-<h2>User Name</h2>
-<input type="text" id="user_name" placeholder="Enter Your Name">
+        <a href="index.html" id="back-btn">← Back to Dashboard</a>
 
-<button onclick="getRecommendation()">Generate Recommendation</button>
+        <section>
+            <h2>AI Smart Recommendation</h2>
+            <div class="form-group">
+                <label for="user_name">Whose recommendation do you want?</label>
+                <input type="text" id="user_name" placeholder="Enter Your Name">
+            </div>
+            <button class="primary" onclick="getRecommendation()">🤖 Generate Magic List</button>
+        </section>
 
-<div id="recommendList"></div>
-<p id="summary"></p>
-
-<br>
-<a href="index.html">Back</a>
-</div>
+        <section id="result-section">
+            <div id="recommendList"></div>
+            <div id="summary"></div>
+        </section>
+    </div>
 
 <script src="js/script.js"></script>
 </body>

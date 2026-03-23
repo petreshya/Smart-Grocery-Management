@@ -65,16 +65,20 @@ function loadItems() {
         let list = document.getElementById("itemList");
         list.innerHTML = "";
         if (data.length === 0) {
-            list.innerHTML = "<li style='color: gray;'>No items added yet. Go to 'Add Item' to add groceries.</li>";
+            list.innerHTML = "<div class='empty-state'>No items added yet. Click 'Add New Item' to begin!</div>";
         } else {
             data.forEach(item => {
-                const freq = item.purchase_frequency || item.purchase_frequency;
-                const pri = item.priority || 'unknown';
-                itemList.innerHTML += `
+                const priorityClass = item.priority === 'essential' ? 'badge-essential' : 'badge-non-essential';
+                list.innerHTML += `
                     <div class="card">
-                        <span><strong>${item.item_name}</strong> - ₹${item.price}</span>
-                        <span><small>${item.category || 'General'} • ${pri} • ${freq}</small></span>
-                        <button class="small-btn" onclick="deleteItem(${item.id})">Delete</button>
+                        <div class="card-info">
+                            <span class="card-title">${item.item_name}</span>
+                            <span class="card-meta">
+                                <span class="badge ${priorityClass}">${item.priority}</span>
+                                ₹${item.price} • ${item.category} • ${item.purchase_frequency}
+                            </span>
+                        </div>
+                        <button class="small-btn" onclick="deleteItem(${item.id})">Remove</button>
                     </div>`;
             });
         }
@@ -171,15 +175,20 @@ function getRecommendation() {
         list.innerHTML = "";
 
         if (data.recommended_items.length === 0) {
-            list.innerHTML = "<li style='color: gray;'>No recommendations available.</li>";
+            list.innerHTML = "<div class='empty-state'>No recommendations available. Try adding more items or increase your budget.</div>";
         } else {
             data.recommended_items.forEach(item => {
-                list.innerHTML += `<li>${item.item_name} - ₹${item.price}</li>`;
+                list.innerHTML += `
+                    <div class="rec-item">
+                        <span><strong>${item.item_name}</strong></span>
+                        <span>₹${item.price}</span>
+                    </div>`;
             });
         }
 
         document.getElementById("summary").innerHTML =
-            `<strong>Total Cost:</strong> ₹${data.total_cost} | <strong>Remaining Budget:</strong> ₹${data.remaining_budget}`;
+            `<div><strong>Total Plan</strong><br>₹${data.total_cost}</div>
+             <div><strong>Leftover</strong><br>₹${data.remaining_budget}</div>`;
     })
     .catch(err => {
         console.error('Error getting recommendation:', err);

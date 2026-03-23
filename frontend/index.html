@@ -1,32 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BudgetMart</title>
+    <title>BudgetMart - Smart Grocery System</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="container">
-    <h1>🛒 BudgetMart</h1>
-    <p class="header-small">Smart Grocery Recommendation System</p>
-    <p class="header-small"><b>Fresh Choices. Smart Budget. Better Life.</b></p>
+    <div class="container">
+        <header>
+            <h1>🛒 BudgetMart</h1>
+            <p class="header-small">Smart Grocery Recommendation System</p>
+            <p class="tagline">Fresh Choices. Smart Budget. Better Life.</p>
+        </header>
 
-    <h2>User Name</h2>
-    <input type="text" id="user_name" placeholder="Enter Your Name">
+        <section>
+            <h2>User Profile</h2>
+            <div class="form-group">
+                <label for="user_name">Who's shopping today?</label>
+                <input type="text" id="user_name" placeholder="Enter Your Name">
+            </div>
+        </section>
 
-    <h2>Set Monthly Budget</h2>
-    <input type="number" id="budget" placeholder="Enter Budget">
-    <button onclick="setBudget()">Save Budget</button>
+        <section>
+            <h2>Set Monthly Budget</h2>
+            <div class="form-group">
+                <label for="budget">Allocate your monthly funds</label>
+                <input type="number" id="budget" placeholder="e.g. 5000">
+            </div>
+            <button class="primary" onclick="setBudget()">Save Budget</button>
+        </section>
 
-    <h2>All Grocery Items</h2>
-    <button onclick="loadItems()">Load Items</button>
-    <div id="itemList"></div>
+        <section>
+            <h2>Your Grocery List</h2>
+            <button class="secondary" onclick="loadItems()">Load Current Items</button>
+            <div id="itemList" class="item-list"></div>
+        </section>
 
-    <br>
-    <a href="add.html">➕ Add Item</a> |
-    <a href="recommendation.html">🤖 Get Recommendation</a>
-</div>
+        <nav class="nav-links">
+            <a href="add.html">➕ Add New Item</a>
+            <a href="recommendation.html">🤖 Get Magic Suggestion</a>
+        </nav>
+    </div>
 
 <script src="js/script.js"></script>
 </body>

@@ -3,7 +3,7 @@ from flask_cors import CORS
 from database import get_connection, init_db
 from model import recommend_items
 
-app = Flask(__name__, static_folder='../frontend')
+app = Flask(__name__, static_folder='../frontend', static_url_path='')
 CORS(app)
 
 init_db()
